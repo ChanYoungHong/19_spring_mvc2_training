@@ -1,12 +1,12 @@
 package com.spring.training.board.dto;
 
-import java.util.Date;
+import java.util.Date; 
 
 import org.springframework.stereotype.Component;
 
 @Component
 public class BoardDto {
-	
+
 	private int num;
 	private String writer;
 	private String email;
@@ -64,5 +64,16 @@ public class BoardDto {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
+	@Override
+	public String toString() {
+		return "BoardDto [num=" + num + ", writer=" + writer + ", email=" + email + ", subject=" + subject
+				+ ", password=" + password + ", regDate=" + regDate + ", readCount=" + readCount + ", content="
+				+ content + "]";
+	}
+	
+	
+	
+	
 	
 }
