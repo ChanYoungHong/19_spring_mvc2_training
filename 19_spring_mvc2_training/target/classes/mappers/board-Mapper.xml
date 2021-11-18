@@ -25,4 +25,23 @@
 	
 	</insert>
 	
+	
+	<select id="getAllBoard" resultType="com.spring.training.board.dto.BoardDto">
+		SELECT 
+				*
+		FROM
+				T_BOARD;
+	</select>
+	
+	<select id="getOneBoard" parameterType="int" resultType="com.spring.training.board.dto.BoardDto">
+	
+		SELECT
+				*
+		FROM
+				T_BOARD
+		WHERE
+				NUM=#{num}
+
+	</select>
+	
 </mapper>

@@ -6,7 +6,9 @@
 
 <configuration>
 
-
-
+	<!-- resultMap을 사용하지 않아도 db컬럼명과 스프링 POJO의 필드와 매칭되는 설정 -->
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>	
+	</settings>
 
 </configuration>

@@ -1,5 +1,7 @@
 package com.spring.training.board.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -16,10 +18,20 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void insertBoard(BoardDto boardDto) {
 		
-		System.out.println("----service---");
-		System.out.println(boardDto);
+//		System.out.println("----service---");
+//		System.out.println(boardDto);
 		boardDao.insert(boardDto);
 		
+	}
+
+	@Override
+	public List<BoardDto> getBoardList() {			//daosqlSession과 연결이 됨
+		return boardDao.selectAll();
+	}
+
+	@Override
+	public BoardDto getOneBoard(int num) {
+		return boardDao.selectOne(num);
 	}
 	
 }
