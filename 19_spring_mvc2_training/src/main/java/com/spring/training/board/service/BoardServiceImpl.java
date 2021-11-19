@@ -31,7 +31,35 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public BoardDto getOneBoard(int num) {
+		// 조회수 올리는 dao
+		boardDao.increaseReadCount(num);
 		return boardDao.selectOne(num);
+	}
+
+	@Override
+	public boolean deleteBoard(BoardDto boardDto) {
+		
+		boolean isSucceed = false;
+		
+		if(boardDao.validateuserCheck(boardDto) != null) {
+			boardDao.delete(boardDto.getNum());
+			isSucceed = true;
+		}
+		
+		return isSucceed;
+	}
+
+	@Override
+	public boolean updateBoard(BoardDto boardDto) {
+		
+		boolean isSucceed = false;
+		
+		if(boardDao.validateuserCheck(boardDto) != null) {
+			boardDao.update(boardDto);
+			isSucceed = true;
+		}
+		
+		return isSucceed;
 	}
 	
 }

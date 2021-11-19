@@ -29,4 +29,28 @@ public class BoardDaoimpl implements BoardDao {
 		return sqlSession.selectOne("mapper.BoardMapper.getOneBoard", num);
 	}
 
+	@Override
+	public BoardDto validateuserCheck(BoardDto boardDto) {
+		
+		return sqlSession.selectOne("mapper.BoardMapper.validateUserCheck", boardDto);
+	}
+
+	@Override
+	public void delete(int num) {
+		
+		sqlSession.delete("mapper.BoardMapper.deleteBoard", num);
+	}
+
+	@Override
+	public void update(BoardDto boardDto) {
+		sqlSession.update("mapper.BoardMapper.updateBoard", boardDto);
+		
+	}
+
+	@Override
+	public void increaseReadCount(int num) {
+		sqlSession.update("mapper.BoardMapper.increaseReadCount", num);
+		
+	}
+
 }
