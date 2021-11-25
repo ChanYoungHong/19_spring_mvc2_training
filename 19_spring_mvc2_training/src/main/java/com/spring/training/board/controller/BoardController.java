@@ -20,6 +20,11 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	public String main() {
+		return "board/bMain";
+	}
+	
 	@RequestMapping(value="/boardWrite" , method=RequestMethod.GET) // value에는 url주소를 명시 , method는 요청 타입을 명시( 생략시 GET,POST 모두 처리 )     
 	public String boardWrite() {
 		return "board/bWrite"; // servlet-context.xml에 명시된 대로 포워딩 시킬 jsp파일을 작성한다.
