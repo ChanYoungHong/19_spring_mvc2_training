@@ -10,5 +10,9 @@
 	<settings>
 		<setting name="mapUnderscoreToCamelCase" value="true"/>	
 	</settings>
-
+	
+	<typeAliases>
+	 	<typeAlias type="com.spring.mvc2.dataTransfer.domain.OrderDto" alias="OrderDto"/>
+	</typeAliases>
+	
 </configuration>
