@@ -3,9 +3,8 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!--mapper임을 명시하기 위한 DTD 선언 -->
 
 <mapper namespace="mapper.BoardMapper">
-	
+
 	<insert id="insertBoard" parameterType="com.spring.training.board.dto.BoardDto">
-		
 		INSERT INTO T_BOARD(
 					WRITER,
 					EMAIL,
@@ -22,33 +21,25 @@
 					now(),
 					#{readCount},
 					#{content})
-	
 	</insert>
-	
-	
+
 	<select id="getAllBoard" resultType="com.spring.training.board.dto.BoardDto">
-		SELECT 
-				*
-		FROM
-				T_BOARD;
-	</select>
-	
-	<select id="getOneBoard" parameterType="int" resultType="com.spring.training.board.dto.BoardDto">
-	
 		SELECT
 				*
 		FROM
 				T_BOARD
-		WHERE
-				NUM=#{num}
-
 	</select>
-	
-	
-	<select id="validateUserCheck" 
-	parameterType="com.spring.training.board.dto.BoardDto" 
-	resultType="com.spring.training.board.dto.BoardDto">	
-	
+
+	<select id="getOneBoard" parameterType="int" resultType="com.spring.training.board.dto.BoardDto">
+		SELECT
+				*
+		FROM
+				T_BOARD
+		WHERE	
+				NUM=#{num}
+	</select>
+
+	<select id="validateUserCheck" parameterType="com.spring.training.board.dto.BoardDto" resultType="com.spring.training.board.dto.BoardDto">
 		SELECT
 				*
 		FROM
@@ -56,7 +47,7 @@
 		WHERE
 				NUM=#{num} AND PASSWORD=#{password}
 	</select>
-	
+
 	<delete id="deleteBoard" parameterType="int">
 		DELETE FROM 
 				T_BOARD
@@ -65,7 +56,6 @@
 	</delete>
 	
 	<update id="updateBoard" parameterType="com.spring.training.board.dto.BoardDto">
-	
 		UPDATE
 				T_BOARD
 		SET
@@ -76,14 +66,12 @@
 	</update>
 	
 	<update id="increaseReadCount" parameterType="int">
-	
 		UPDATE
 				T_BOARD
 		SET
-				READ_COUNT = READ_COUNT +1
+				READ_COUNT = READ_COUNT + 1
 		WHERE
 				NUM=#{num}
 	</update>
-	
 	
 </mapper>

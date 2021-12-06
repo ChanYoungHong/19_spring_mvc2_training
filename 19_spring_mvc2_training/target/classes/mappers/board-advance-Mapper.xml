@@ -201,7 +201,7 @@
 	</insert>
 	
 	<!-- 페이징 테스트를 위한 더미데이터 생성 쿼리 -->
-	<insert id="makeDummyData" parameterType="list">
+	<insert id="makeDummyData" parameterType="BoardAdvanceDto">
 			INSERT INTO 
 					T_BOARD_ADVANCE 
 			VALUES

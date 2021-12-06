@@ -2,17 +2,17 @@
 <!DOCTYPE configuration 
 	PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-config.dtd">	<!-- Mybatis 설정 파일임을 명시하기 위한 DTD 선언 -->
-
-
+	
 <configuration>
-
-	<!-- resultMap을 사용하지 않아도 db컬럼명과 스프링 POJO의 필드와 매칭되는 설정 -->
+	
+	<!-- resultMap을 사용하지 않아도 db의 컬럼명과 스프링 POJO의 필드와 매칭되는 설정 -->
 	<settings>
-		<setting name="mapUnderscoreToCamelCase" value="true"/>	
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
 	</settings>
 	
 	<typeAliases>
-	 	<typeAlias type="com.spring.mvc2.dataTransfer.domain.OrderDto" alias="OrderDto"/>
+		<typeAlias type="com.spring.training.board_advance.dto.BoardAdvanceDto" alias="BoardAdvanceDto"/>
+		<typeAlias type="com.spring.training.member.dto.MemberDto" alias="MemberDto"/>
 	</typeAliases>
-	
+
 </configuration>
